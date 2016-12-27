@@ -1,0 +1,558 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAcAUlNACQoAXVVbDw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+<title>Ogre Magi/Counters - Dota 2 Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Ogre_Magi/Counters","wgTitle":"Ogre Magi/Counters","wgCurRevisionId":1290399,"wgRevisionId":1290399,"wgArticleId":247113,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Help wanted","Counters"],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Ogre_Magi/Counters","wgRelevantArticleId":247113,"wgRequestId":"4ac7e339c3bbcf3a606a6f5b","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgCollapsibleVectorEnabledModules":{"collapsiblenav":true,"experiments":true},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.smw.style","mediawiki.page.startup","ext.siteGlobals","ext.visualEditor.desktopArticleTarget.init","ext.curseAuth.banners","skins.vector.js","skins.hydra.advertisements.js","skins.hydra.footer.js","ext.social"]);});</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=hydra"/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=ext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.hydra.advertisements.styles%7Cskins.hydra.footer%2Cnetbar%7Cskins.vector.styles%7Cskins.vector.styles.responsive%7Cskins.z.hydra.light&amp;only=styles&amp;skin=hydra"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=hydra"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=hydra"></script>
+<meta name="generator" content="MediaWiki 1.27.1"/>
+<meta name="description" content="List of heroes that counter Ogre Magi, and list of heroes that work well with Ogre Magi."/>
+<meta name="og:title" content="Ogre Magi/Counters"/>
+<meta name="og:type" content="website"/>
+<meta name="og:image" content="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/bc/Wiki.png"/>
+<meta name="og:url" content="http://dota2.gamepedia.com/Ogre_Magi/Counters"/>
+<meta name="og:site_name" content="Dota 2 Wiki"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="ExportRDF" type="application/rdf+xml" title="Ogre Magi/Counters" href="/index.php?title=Special:ExportRDF/Ogre_Magi/Counters&amp;xmlmime=rdf"/>
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/index.php?title=Ogre_Magi/Counters&amp;action=edit"/>
+<link rel="edit" title="Edit" href="/index.php?title=Ogre_Magi/Counters&amp;action=edit"/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="shortcut icon" href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/64/Favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Dota 2 Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//dota2.gamepedia.com/api.php?action=rsd"/>
+<link rel="copyright" href="//creativecommons.org/licenses/by-nc-sa/3.0/"/>
+<link rel="canonical" href="http://dota2.gamepedia.com/Ogre_Magi/Counters"/>
+<meta itemprop="author" content="Gamepedia" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Ogre_Magi_Counters rootpage-Ogre_Magi skin-hydra action-view site-dota2-gamepedia show-ads">
+<script type="text/javascript">
+	window.isMobileResponsive = false;
+</script> 
+<script>
+if (Math.max(document.documentElement.clientHeight, window.innerHeight || 0) < 800) {
+	document.addEventListener("DOMContentLoaded", function(event) { 
+		var element = document.getElementById("cdm-zone-06");
+		element.parentNode.removeChild(element);
+	});
+}
+
+window.factorem = window.factorem || {};
+window.factorem.recoveryUrl = '//'+document.location.host+'/sites/'+document.location.hostname+'/recovery.json';
+window.factorem.recoveryInitialDelay = 0;
+window.factorem.adBlockCallback = (function() {
+
+});
+
+var script = document.createElement('script');
+var tstamp = new Date();
+script.id = 'factorem';
+script.src = 'http://cdm.cursecdn.com/js/chip-testing/recovery/cdmfactorem_recover2_min.js?misc=' + tstamp.getTime();;
+script.async = false;
+script.type='text/javascript';
+document.head.appendChild(script);
+</script><div id="netbar">
+	<ul class="netbar-left">
+		<li><a class="curse" href="http://www.gamepedia.com">Gamepedia</a></li>
+					<li><a href="http://support.gamepedia.com/">Help</a></li>
+									</ul>
+
+		<ul class="netbar-right">
+									<li><a href="/index.php?title=Special:UserLogin&returnto=Ogre+Magi%2FCounters" id="login-link">Sign In</a></li>
+							<li><a href="/index.php?title=Special:CreateAccount&returnto=Ogre+Magi%2FCounters" id="register-link">Register</a></li>
+						</ul>
+</div><div id="global-wrapper" class="with-siderail">
+	<div id="mw-page-base" class="noprint"></div>
+	<div id="mw-head-base" class="noprint"></div>
+	<div id="pageWrapper">
+		<div id="content" itemprop="articleBody" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<!-- ATF Leaderboard -->
+						<div id="atflb">
+				<div id='cdm-zone-01'></div>			</div>
+						<!-- /ATF Leaderboard -->
+			<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Ogre Magi/Counters</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Dota 2 Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="/Ogre_Magi" title="Ogre Magi">Ogre Magi</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="ambox" style="background-color: #ace600; background-image: -moz-linear-gradient(left, #ace600, #ffffff); background-image: -ms-linear-gradient(left, #ace600, #ffffff); background-image: -o-linear-gradient(left, #ace600, #ffffff); background-image: -webkit-gradient(linear, left top, right top, from(#ace600), to(#ffffff));"><tr>
+   <td class="ambox-image ambox-content"><a href="/File:Release_Illuminate_icon.png" class="image"><img alt="Release Illuminate icon.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Release_Illuminate_icon.png/56px-Release_Illuminate_icon.png?version=9c9d93c8e4186ed17c4df590ae76e821" width="56" height="56" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Release_Illuminate_icon.png/84px-Release_Illuminate_icon.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/dd/Release_Illuminate_icon.png/112px-Release_Illuminate_icon.png 2x" /></a></td><td class="ambox-text"><a href="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3f/Keep_illus_02.mp3" title="Play" class="sm2_button">Play</a>&#160;<span style="font-size: 90%;"><i>“Many hands make light work.”</i></span><br /><span style="font-size: 95%;"><b>This article needs more information. Please help the community by updating it.</b></span><br /></td>
+</tr></table><br />
+<table style="text-align: center; white-space: nowrap; vertical-align: top; margin-bottom: 20px;" cellspacing="0" cellpadding="0" border="0">
+
+<tr style="background-color: transparent;">
+<td>&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi" title="Ogre Magi">Hero</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Guide" title="Ogre Magi/Guide">Strategy</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding:0.5em; background-color:white; line-height:0.95em; border:solid 2px #A3B1BF; border-bottom:0; font-weight:bold; width: 20px;"> <strong class="selflink">Counters</strong>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;"> &#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Equipment" title="Ogre Magi/Equipment">Equipment</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Gear" title="Ogre Magi/Gear">Gear</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Responses" title="Ogre Magi/Responses">Responses</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Sounds" title="Ogre Magi/Sounds">Sounds</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Lore" title="Ogre Magi/Lore">Lore</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Old_Abilities" title="Ogre Magi/Old Abilities">Old Abilities</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;</td>
+<td style="padding: 0.5em; background-color: #d7e6f4; line-height: 0.95em; border: 1px solid #A3B1BF; border-bottom: solid 2px #A3B1BF; width: 20px;"> <a href="/Ogre_Magi/Changelogs" title="Ogre Magi/Changelogs">Changelogs</a>
+</td>
+<td style="border-bottom: 2px solid #A3B1BF; width: 3px;">&#160;
+</td>
+<td style="border-bottom:2px solid #A3B1BF" width="3000"> &#160;
+</td></tr></table><br />
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bad_Against"><span class="tocnumber">1</span> <span class="toctext">Bad Against</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Others"><span class="tocnumber">1.1</span> <span class="toctext">Others</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Items"><span class="tocnumber">1.2</span> <span class="toctext">Items</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Good_against..."><span class="tocnumber">2</span> <span class="toctext">Good against...</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Others_2"><span class="tocnumber">2.1</span> <span class="toctext">Others</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Works_well_with..."><span class="tocnumber">3</span> <span class="toctext">Works well with...</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Others_3"><span class="tocnumber">3.1</span> <span class="toctext">Others</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Bad_Against">Bad Against</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=1" title="Edit section: Bad Against" class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=1" title="Edit section: Bad Against">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px red;"> <a href="/Meepo" title="Meepo"><img alt="Meepo.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Meepo.png/80px-Meepo.png?version=72d32105ebef9154a4543de89e91d84f" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Meepo.png/120px-Meepo.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/03/Meepo.png/160px-Meepo.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Meepo" title="Meepo">Meepo</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px red;"> <a href="/Undying" title="Undying"><img alt="Undying.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0d/Undying.png/80px-Undying.png?version=ae139772b43661ac1174d89c4a19f972" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0d/Undying.png/120px-Undying.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/0/0d/Undying.png/160px-Undying.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Undying" title="Undying">Undying</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px red;"> <a href="/Phantom_Lancer" title="Phantom Lancer"><img alt="Phantom Lancer.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/51/Phantom_Lancer.png/80px-Phantom_Lancer.png?version=2205b499a52bf44f7c5c4b19dcbbe343" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/51/Phantom_Lancer.png/120px-Phantom_Lancer.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/5/51/Phantom_Lancer.png/160px-Phantom_Lancer.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Phantom_Lancer" title="Phantom Lancer">Phantom Lancer</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px red;"> <a href="/Oracle" title="Oracle"><img alt="Oracle.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/17/Oracle.png/80px-Oracle.png?version=47a3302b1f32bf5fb585d10e2d4f7a6d" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/17/Oracle.png/120px-Oracle.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/1/17/Oracle.png/160px-Oracle.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Oracle" title="Oracle">Oracle</a></b></span>
+<ul><li>Reason</li></ul>
+<h3><span class="mw-headline" id="Others">Others</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=2" title="Edit section: Others" class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=2" title="Edit section: Others">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul><li>Earth Spirit</li>
+<li>Arc Warden</li>
+<li>Puck</li>
+<li>Huskar</li></ul>
+<h3><span class="mw-headline" id="Items">Items</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=3" title="Edit section: Items" class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=3" title="Edit section: Items">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul><li>Diffusal Blade</li>
+<li>Black King Bar</li>
+<li>Entry</li></ul>
+<h2><span class="mw-headline" id="Good_against...">Good against...</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=4" title="Edit section: Good against..." class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=4" title="Edit section: Good against...">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px chartreuse;"> <a href="/Phantom_Assassin" title="Phantom Assassin"><img alt="Phantom Assassin.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Phantom_Assassin.png/80px-Phantom_Assassin.png?version=3940255f820c6b7efaec980fee9949bf" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Phantom_Assassin.png/120px-Phantom_Assassin.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Phantom_Assassin.png/160px-Phantom_Assassin.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Phantom_Assassin" title="Phantom Assassin">Phantom Assassin</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px chartreuse;"> <a href="/Troll_Warlord" title="Troll Warlord"><img alt="Troll Warlord.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Troll_Warlord.png/80px-Troll_Warlord.png?version=9dbc1ed1770b1f156044f7af8143b8f1" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Troll_Warlord.png/120px-Troll_Warlord.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/d/d7/Troll_Warlord.png/160px-Troll_Warlord.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Troll_Warlord" title="Troll Warlord">Troll Warlord</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px chartreuse;"> <a href="/Enchantress" title="Enchantress"><img alt="Enchantress.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Enchantress.png/80px-Enchantress.png?version=5ce4daafb0bf37ae8bce5ff9b8881874" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Enchantress.png/120px-Enchantress.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/9/99/Enchantress.png/160px-Enchantress.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Enchantress" title="Enchantress">Enchantress</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px chartreuse;"> <a href="/Ursa" title="Ursa"><img alt="Ursa.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/80px-Ursa.png?version=3798375394f80285eaec797e26b0ff34" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/120px-Ursa.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/160px-Ursa.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Ursa" title="Ursa">Ursa</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px chartreuse;"> <a href="/Timbersaw" title="Timbersaw"><img alt="Timbersaw.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/80px-Timbersaw.png?version=1dbcd5111cd2ab724aa12f6b9f3236b2" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/120px-Timbersaw.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/160px-Timbersaw.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Timbersaw" title="Timbersaw">Timbersaw</a></b></span>
+<ul><li>Reason</li></ul>
+<h3><span class="mw-headline" id="Others_2">Others</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=5" title="Edit section: Others" class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=5" title="Edit section: Others">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul><li>Riki</li>
+<li>Leshrac</li>
+<li>Spectre</li></ul>
+<h2><span class="mw-headline" id="Works_well_with...">Works well with...</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=6" title="Edit section: Works well with..." class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=6" title="Edit section: Works well with...">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px skyblue;"> <a href="/Ursa" title="Ursa"><img alt="Ursa.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/80px-Ursa.png?version=3798375394f80285eaec797e26b0ff34" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/120px-Ursa.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/a/a6/Ursa.png/160px-Ursa.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Ursa" title="Ursa">Ursa</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px skyblue;"> <a href="/Phantom_Assassin" title="Phantom Assassin"><img alt="Phantom Assassin.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Phantom_Assassin.png/80px-Phantom_Assassin.png?version=3940255f820c6b7efaec980fee9949bf" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Phantom_Assassin.png/120px-Phantom_Assassin.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f0/Phantom_Assassin.png/160px-Phantom_Assassin.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Phantom_Assassin" title="Phantom Assassin">Phantom Assassin</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px skyblue;"> <a href="/Timbersaw" title="Timbersaw"><img alt="Timbersaw.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/80px-Timbersaw.png?version=1dbcd5111cd2ab724aa12f6b9f3236b2" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/120px-Timbersaw.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/8/81/Timbersaw.png/160px-Timbersaw.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Timbersaw" title="Timbersaw">Timbersaw</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px skyblue;"> <a href="/Night_Stalker" title="Night Stalker"><img alt="Night Stalker.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bb/Night_Stalker.png/80px-Night_Stalker.png?version=b16bd1f1cf07b365ca0769ebde7cbf37" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bb/Night_Stalker.png/120px-Night_Stalker.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/b/bb/Night_Stalker.png/160px-Night_Stalker.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Night_Stalker" title="Night Stalker">Night Stalker</a></b></span>
+<ul><li>Reason</li></ul>
+<div style="margin:7px 5px 0px;vertical-align:center;text-align:center;display:inline-block;line-height:normal;width:80px;">
+<div style="margin-bottom: 5px;box-shadow:0px 0px 2px 4px skyblue;"> <a href="/Wraith_King" title="Wraith King"><img alt="Wraith King.png" src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Wraith_King.png/80px-Wraith_King.png?version=5b637efa6e6f1ef00b1b4cf07e343aa6" width="80" height="45" srcset="https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Wraith_King.png/120px-Wraith_King.png 1.5x, https://hydra-media.cursecdn.com/dota2.gamepedia.com/thumb/f/f2/Wraith_King.png/160px-Wraith_King.png 2x" /></a></div></div> <span style="font-size:12pt;"><b><a href="/Wraith_King" title="Wraith King">Wraith King</a></b></span>
+<ul><li>Reason</li></ul>
+<h3><span class="mw-headline" id="Others_3">Others</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit&amp;vesection=7" title="Edit section: Others" class="mw-editsection-visualeditor">edit</a><span class="mw-editsection-divider"> | </span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit&amp;section=7" title="Edit section: Others">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul><li>Bloodseeker</li>
+<li>Entry</li>
+<li>Windranger</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20160916141325
+Cache expiry: 86400
+Dynamic content: false
+[SMW] In‐text annotation parser time: 0.000 seconds
+CPU time usage: 0.464 seconds
+Real time usage: 0.567 seconds
+Preprocessor visited node count: 2830/1000000
+Preprocessor generated node count: 5520/1000000
+Post‐expand include size: 23179/2097152 bytes
+Template argument size: 2965/2097152 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/99
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  425.687      1 - -total
+ 66.10%  281.377     14 - Template:Hero_label
+ 52.30%  222.638     14 - Template:Name
+ 19.52%   83.074      1 - Template:Help_wanted
+ 17.38%   73.964      1 - Template:Ambox
+ 16.03%   68.254     53 - Template:If_lang
+ 13.85%   58.967      1 - Template:Ambox/message
+ 13.41%   57.085      1 - Template:Tabs_Ogre_Magi
+ 12.70%   54.051      1 - Template:Tabs_Hero
+ 11.68%   49.730      1 - Template:Tabber
+-->
+
+<!-- Saved in parser cache with key dota2_gamepedia:pcache:idhash:247113-0!*!0!default!!en!5!* and timestamp 20160916141324 and revision id 1290399
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://dota2.gamepedia.com/index.php?title=Ogre_Magi/Counters&amp;oldid=1290399">http://dota2.gamepedia.com/index.php?title=Ogre_Magi/Counters&amp;oldid=1290399</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/Category:Help_wanted" title="Category:Help wanted">Help wanted</a></li><li><a href="/Category:Counters" title="Category:Counters">Counters</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+						<div id="siderail">
+				<!-- 300x250 Ad block -->
+								<div id="atfmrec">
+					<div id='cdm-zone-02'></div>				</div>
+								<!-- End 300x250 Ad block -->
+
+				<!-- ZergNet Side Rail -->
+								<div id="zergnetsiderail">
+					<div id="zergnet-widget-41302"></div>
+
+<script language="javascript" type="text/javascript">
+	(function() {
+		var zergnet = document.createElement('script');
+		zergnet.type = 'text/javascript'; zergnet.async = true;
+		zergnet.src = 'https://www.zergnet.com/zerg.js?id=41302';
+		var znscr = document.getElementsByTagName('script')[0];
+		znscr.parentNode.insertBefore(zergnet, znscr);
+	})();
+</script>​				</div>
+				
+				<div id="gp-pro-upsell">
+					<a href="https://www.gamepedia.com/pro"><img src="http://dota2.gamepedia.com/skins/Hydra/images/gppro/gpproupsellshort.png"></a>
+				</div>
+				<!-- 300x250 Ad block -->
+								<div id="btfmrec">
+					<div id='cdm-zone-06'></div>				</div>
+								<!-- End 300x250 Ad block -->
+			</div>
+			<div class="visualClear"></div>
+						<!-- ZergNet -->
+						<div id="zergnet_container">
+				<div id="zergnet-widget-37709"></div>
+
+<script language="javascript" type="text/javascript">
+    (function() {
+        var zergnet = document.createElement('script');
+        zergnet.type = 'text/javascript'; zergnet.async = true;
+        zergnet.src = '//www.zergnet.com/zerg.js?id=37709';
+        var znscr = document.getElementsByTagName('script')[0];
+        znscr.parentNode.insertBefore(zergnet, znscr);
+    })();
+</script>			</div>
+						<!-- /ZergNet -->
+			<!-- BTF Leaderboard -->
+						<div id="btflb">
+				<div id='cdm-zone-04'></div>			</div>
+						<!-- /BTF Leaderboard -->
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+								<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/Ogre_Magi/Counters"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/index.php?title=Talk:Ogre_Magi/Counters&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-sharing" role="navigation" class="vectorMenu" aria-labelledby="p-sharing-label">
+						<h3 id="p-sharing-label"><span>Share</span><a href="#"></a></h3>
+						<div class="menu">
+							
+				<div id="socialIconImages">
+					<a href="https://twitter.com/intent/tweet?text=Check+out+Ogre+Magi%2FCounters+on+Dota+2+Wiki+--&via=CurseGamepedia&url=http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters" target="_blank"><img src="/extensions/Social/images/square_icons/twitter.png"/></a><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters" target="_blank"><img src="/extensions/Social/images/square_icons/facebook.png"/></a><a href="https://plus.google.com/share?url=http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters" target="_blank"><img src="/extensions/Social/images/square_icons/googleplus.png"/></a><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters&title=Check+out+Ogre+Magi%2FCounters+on+Dota+2+Wiki+via+%40CurseGamepedia%3A+http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters" target="_blank"><img src="/extensions/Social/images/square_icons/reddit.png"/></a><a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters&name=Dota+2+Wiki&description=Check+out+Ogre+Magi%2FCounters+on+Dota+2+Wiki+via+%3Ca+href%3D%22https%3A%2F%2Ftwitter.com%2FCurseGamepedia%22+target%3D%22_blank%22%3E%40CurseGamepedia%3C%2Fa%3E%3A+http%3A%2F%2Fdota2.gamepedia.com%2FOgre_Magi%2FCounters" target="_blank"><img src="/extensions/Social/images/square_icons/tumblr.png"/></a>
+				</div>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/Ogre_Magi/Counters" >View</a></span></li>
+															<li id="ca-ve-edit"><span><a href="/index.php?title=Ogre_Magi/Counters&amp;veaction=edit"  title="Edit this page with the VisualEditor [v]" accesskey="v">Edit</a></span></li>
+															<li id="ca-edit" class=" collapsible"><span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/index.php?title=Ogre_Magi/Counters&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Dota 2 Wiki [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/Dota_2_Wiki"  title="Main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/Dota_2_Wiki" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-Heroes"><a href="/Heroes">Heroes</a></li><li id="n-Items"><a href="/Items">Items</a></li><li id="n-Mechanics"><a href="/Mechanics">Mechanics</a></li><li id="n-Creeps"><a href="/Creeps">Creeps</a></li><li id="n-Buildings"><a href="/Buildings">Buildings</a></li><li id="n-Runes"><a href="/Runes">Runes</a></li><li id="n-Minimap"><a href="/Minimap">Minimap</a></li><li id="n-Game-modes"><a href="/Game_Modes">Game modes</a></li><li id="n-Events"><a href="/Events">Events</a></li><li id="n-Patches"><a href="/Patches">Patches</a></li><li id="n-Versions"><a href="/Versions">Versions</a></li><li id="n-Console"><a href="/List_of_Console_Commands">Console</a></li><li id="n-Hero-stats-table"><a href="/Table_of_hero_attributes">Hero stats table</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Cosmetics' aria-labelledby='p-Cosmetics-label'>
+			<h3 id='p-Cosmetics-label'>Cosmetics</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Equipment"><a href="/Equipment">Equipment</a></li><li id="n-Gems"><a href="/Gems">Gems</a></li><li id="n-Couriers"><a href="/Custom_Courier">Couriers</a></li><li id="n-Wards"><a href="/Custom_Wards">Wards</a></li><li id="n-HUD-Skins"><a href="/HUD_Skins">HUD Skins</a></li><li id="n-Music"><a href="/Music">Music</a></li><li id="n-Emoticons"><a href="/Emoticons">Emoticons</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Ogre_Magi/Counters" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Ogre_Magi/Counters" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/index.php?title=Ogre_Magi/Counters&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Ogre_Magi/Counters&amp;oldid=1290399" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Ogre_Magi/Counters&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="/Special:Browse/Ogre_Magi-2FCounters" rel="smw-browse">Browse properties</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Wiki_Links' aria-labelledby='p-Wiki_Links-label'>
+			<h3 id='p-Wiki_Links-label'>Wiki Links</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Discussion"><a href="/Dota_2_Wiki:Discussion">Discussion</a></li><li id="n-Twitter"><a href="https://twitter.com/dota2wiki" rel="nofollow" target="_blank">Twitter</a></li><li id="n-Steam-Group"><a href="http://steamcommunity.com/groups/dota2wiki" rel="nofollow" target="_blank">Steam Group</a></li><li id="n-IRC-channel"><a href="/Dota_2_Wiki:IRC">IRC channel</a></li><li id="n-Translate"><a href="/Help:Language_translation">Translate</a></li><li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Official_Links' aria-labelledby='p-Official_Links-label'>
+			<h3 id='p-Official_Links-label'>Official Links</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Blog"><a href="http://blog.dota2.com" rel="nofollow" target="_blank">Blog</a></li><li id="n-Store"><a href="http://www.dota2.com/store/" rel="nofollow" target="_blank">Store</a></li><li id="n-Steam-Hub"><a href="http://steamcommunity.com/app/570" rel="nofollow" target="_blank">Steam Hub</a></li><li id="n-PlayDota"><a href="http://www.playdota.com/" rel="nofollow" target="_blank">PlayDota</a></li><li id="n-Twitter"><a href="http://twitter.com/#!/dota2" rel="nofollow" target="_blank">Twitter</a></li><li id="n-Facebook"><a href="http://www.facebook.com/pages/Dota-2/106876872711112" rel="nofollow" target="_blank">Facebook</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Gamepedia' aria-labelledby='p-Gamepedia-label'>
+			<h3 id='p-Gamepedia-label'>Gamepedia</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Forums"><a href="http://gamepedia.com/forums" target="_blank">Forums</a></li><li id="n-Help"><a href="http://help.gamepedia.com" target="_blank">Help</a></li><li id="n-Contact"><a href="http://help.gamepedia.com/How_To_Contact_Gamepedia" target="_blank">Contact</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Partners' aria-labelledby='p-Partners-label'>
+			<h3 id='p-Partners-label'>Partner</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-Abios-Gaming"><a href="http://abiosgaming.com" target="_blank">Abios Gaming</a></li><li id="n-Dota-2-Reddit"><a href="https://www.reddit.com/r/DotA2" rel="nofollow" target="_blank">Dota 2 Reddit</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Languages' aria-labelledby='p-Languages-label'>
+			<h3 id='p-Languages-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-English"><a href="/Ogre_Magi/Counters">English</a></li><li id="n-.D0.A0.D1.83.D1.81.D1.81.D0.BA.D0.B8.D0.B9"><a href="/Ogre_Magi/Counters/ru">Русский</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-socialProfiles' aria-labelledby='p-socialProfiles-label'>
+			<h3 id='p-socialProfiles-label'></h3>
+
+			<div class="body">
+				<div class='socialSidebar'>
+						<script type='text/javascript'>
+							document.getElementById('p-socialProfiles').className = 'portal persistent';
+						</script>
+						<div class='socialLink twitter'><a href="https://twitter.com/CurseGamepedia" target="_blank"><img src="/extensions/Social/images/square_icons/twitter.png"/></a></div><div class='socialLink facebook'><a href="https://www.facebook.com/CurseGamepedia" target="_blank"><img src="/extensions/Social/images/square_icons/facebook.png"/></a></div><div class='socialLink youtube'><a href="https://www.youtube.com/CurseEntertainment" target="_blank"><img src="/extensions/Social/images/square_icons/youtube.png"/></a></div>
+					</div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on <time itemprop="datePublished" datetime="2016-12-09T08:20">12 September 2016, at 08:20</time>.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="//creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a> unless otherwise noted.<br/>Dota 2 content and materials are trademarks and copyrights of Valve or its licensors. All rights reserved.<br />
+This site is a part of Curse, Inc. and is not affiliated with Valve.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-about"><a href="/Dota_2_Wiki:About" title="Dota 2 Wiki:About">About Dota 2 Wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/Dota_2_Wiki:General_disclaimer" title="Dota 2 Wiki:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a href="//dota2.gamepedia.com/index.php?title=Ogre_Magi/Counters&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="//creativecommons.org/licenses/by-nc-sa/3.0/"><img src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" alt="CC BY-NC-SA 3.0" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a><a href="https://help.gamepedia.com/What_is_Hydra"><img src="/skins/Hydra/images/icons/poweredbyhydra.png" alt="Powered by Hydra" width="88" height="31"/></a><a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img src="/extensions/SemanticMediaWiki/includes/../res/images/smw_button.png" alt="Powered by Semantic MediaWiki" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+	</div>
+	<div id="footer-push"></div>
+</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["ext.wfSoundManager2Button","ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.collapsiblevector.collapsibleNav","ext.visualEditor.targetLoader"]);});</script><footer id="footer" role="complimentary" class="show-ads">
+	<div class="footer-links">
+				<a href="http://www.gamepedia.com" class="curse">Gamepedia powered by Curse</a>
+		<ul class="social">
+			<li><a href="https://www.facebook.com/CurseGamepedia" class="fb">Facebook</a></li>
+			<li><a href="https://twitter.com/CurseGamepedia" class="tw">Twitter</a></li>
+			<li><a href="http://youtube.com/CurseEntertainment" class="yt">Youtube</a></li>
+			<li><a href="http://help.gamepedia.com/How_To_Contact_Gamepedia" class="nl">Newsletter</a></li>
+		</ul>
+					<ul class="you">
+									<li><a href="/index.php?title=Special:UserLogin&returnto=Ogre+Magi%2FCounters" id="login-link" class="sign-in">Sign In</a></li>
+									<li><a href="/index.php?title=Special:CreateAccount&returnto=Ogre+Magi%2FCounters" class="register" id="register-link">Register</a></li>
+										<li><a href="http://www.curseinc.com/careers" class="careers">Careers</a></li>
+			<li><a href="http://support.gamepedia.com/" class="help">Help</a></li>
+					</ul>
+			<ul class="more">
+					<li><a href="http://www.curseinc.com/" class="about">About Curse</a></li>
+			<li><a href="http://www.curseinc.com/audience" class="advertise">Advertise</a></li>
+			<li><a href="http://www.curse.com/terms" class="tos">Terms of Service</a></li>
+			<li><a href="http://www.curse.com/privacy" class="privacy-policy">Privacy Policy</a></li>
+		</ul>
+		<span class="copyright">Copyright 2005-2016, Curse Inc.</span>
+	</div>
+			<div class="ad-placement ad-main-med-rect-footer">
+			<div id='cdm-zone-03'></div>		</div>
+	</footer>
+
+<script type="text/javascript">
+(function(i, s, o, g, r, a, m) {
+	i['GoogleAnalyticsObject'] = r;
+	i[r] = i[r] || function() {
+		(i[r].q = i[r].q || []).push(arguments)
+	}
+
+	, i[r].l = 1 * new Date();
+	a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0];
+	a.async = 1;
+	a.src = g;
+	m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-41338520-39', 'auto', 'tracker0');
+ga('create', 'UA-1045810-22', 'auto', 'tracker1');
+ga('create', 'UA-35871056-4', 'auto', 'tracker2');
+ga('create', 'UA-26524418-3', 'auto', 'tracker3');
+ga('tracker0.send', 'pageview');
+ga('tracker1.send', 'pageview');
+ga('tracker2.send', 'pageview');
+ga('tracker3.send', 'pageview');
+</script>
+
+
+<!-- Begin comScore -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "6035118" });
+(function() {
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=6035118&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore -->
+
+<!-- Begin Nielsen -->
+<script type="text/javascript">
+(function () {
+	var d = new Image(1, 1);
+	d.onerror = d.onload = function () {
+		d.onerror = d.onload = null;
+	};
+	d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+})();
+</script>
+<noscript>
+<div><img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&cg=0&cc=1&ts=noscript" width="1" height="1" alt="" /></div>
+</noscript>
+<!-- End Nielsen --><div id='cdm-zone-end'></div><!-- Lotame -->
+<script src="//tags.crwdcntrl.net/c/3613/cc.js?ns=_cc3613" id="LOTCC_3613"></script>
+<script>
+_cc3613.bcp();
+</script>
+<img src="//bcp.crwdcntrl.net/5/c=3613" width="1" height="1"/>
+<!-- End Lotame -->
+
+<!-- Start PubMP -->
+<script type="text/javascript" src="//ads.pubmatic.com/AdServer/js/showad.js#PIX&ptask=DSP&SPug=1"></script> 
+<!-- End PubMP -->
+			<script type="text/javascript">
+				window.genreCategory = 'MOBA';
+			</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1007});});</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f4858b7a","applicationID":"1909498","transactionName":"YlVXbREHWksEUkVdCVsfYEsKSV1WAVRJGhZdQA==","queueTime":0,"applicationTime":1230,"atts":"ThJAG1kdSRRHUBMOHUhN","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
