@@ -10,7 +10,8 @@ It is well known among players that to be a strong team you do not have to have 
 - Recommendation tools. There some websites and mobile application that offer heroes to choose in your situation. For example, if you know that 2 of your enemies already chosen heroes and 4 of your allies also chosen heroes(number of heroes does not matter), these applications shows you some heroes to choose, which is considered to be an optimal heroes, but it is not known how do their apps work to predict optimal heroes. 
 	
 	
-	My idea is to provide a new recommendation tool with an easy and convenient interface and in which a player is able to compare and choose a hero among offered heroes.
+
+My idea is to provide a new recommendation tool with an easy and convenient interface and in which a player is able to compare and choose a hero among offered heroes.
 
 DEMO:
 	https://www.youtube.com/watch?v=tavPIC5Ch30
