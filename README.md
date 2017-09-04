@@ -3,7 +3,7 @@ Dota2 is a world wide played game, which has a userbase of up to 10 millions now
 
 It is well known among players that to be a strong team you do not have to have a collection of the strongest or the best heroes but you must consider how a heroes can help each other and be effective against enemy team. But how do players know which hero to choose to be effective? Let me explain 3 techniques that players usually use when choosing a hero:
 
--Experience - most powerful thing to use. For example, if you have played a 100 games against ’Zeus’ before, you will probably know which player will be good against ’Zeus’ now. if you have played 1000 games against ’Zeus’, it will be more probably that you will choose the most optimal hero against him. Most used by professionals, obviously. 
+- Experience - most powerful thing to use. For example, if you have played a 100 games against ’Zeus’ before, you will probably know which player will be good against ’Zeus’ now. if you have played 1000 games against ’Zeus’, it will be more probably that you will choose the most optimal hero against him. Most used by professionals, obviously. 
 
 - Logic. For example, if you know that your enemy chosen ’Rikimaru’ which can be invisible and its his most important ability. Then you will probably choose ’Silencer’ which has an ability to show invisible heroes for a while, but it can not be always good reason to rely. 
 
